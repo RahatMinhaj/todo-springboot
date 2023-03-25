@@ -13,7 +13,6 @@ import javax.persistence.*;
 public class Users {
     @Id
     private String userName;
-
     private String userPass;
     private String userRole;
 }

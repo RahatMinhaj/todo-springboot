@@ -11,12 +11,12 @@ import javax.transaction.Transactional;
 import java.util.List;
 
 @Repository
-public interface TodoRepository extends JpaRepository<TodoList, Long > {
+public interface TodoRepository extends JpaRepository<TodoList, Long> {
 
     @Modifying
     @Transactional
-    @Query(value = "update todo_list set status =:status where todoid in ( :ids )",nativeQuery = true)
-    public int UpdateStatusByIds(@Param("ids") List<Long> ids, @Param("status") String status);
+    @Query(value = "update todo_list set status =:status where todoid in ( :ids )", nativeQuery = true)
+    int UpdateStatusByIds(@Param("ids") List<Long> ids, @Param("status") String status);
 }
 
 
